@@ -2,6 +2,8 @@
 **/input.txt
 **/example.txt
 **/CMakeLists.txt
+**/part1
+**/part2
 
 # Prerequisites
 *.d

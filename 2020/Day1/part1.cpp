@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     int total = 0;
-    ifstream infile("../input.txt");
+    ifstream infile("input.txt");
     string line;
     vector<int> vals;
     

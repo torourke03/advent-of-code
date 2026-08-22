@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <map>
@@ -36,6 +37,7 @@ int main() {
     int total = 0;
     ifstream infile("input.txt");
     vector<string> passes;
+    vector<int> ids;
     
     string line;
     map<string, string> passport;
@@ -44,8 +46,14 @@ int main() {
     }
     
     for (string pass : passes) {
-        int id = calcSeatId(pass);
-        if (id > total) total = id;
+        ids.push_back(calcSeatId(pass));
+    }
+    sort(ids.begin(), ids.end());
+    for (int i = 0; i < ids.size() - 1; i++) {
+        if (ids[i + 1] - ids[i] == 2) {
+            cout << ids[i] + 1 << endl;
+            total = ids[i] + 1;
+        }
     }
     
     cout << "Total: " << total << endl;

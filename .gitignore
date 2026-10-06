@@ -6,5 +6,6 @@ example.txt
 part1
 part2
 
-#VSCode
+# IDE Files
 .vscode
+.idea

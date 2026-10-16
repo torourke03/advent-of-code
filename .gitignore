@@ -6,7 +6,10 @@ output.txt
 # Binaries
 part1
 part2
+out/
 
 # IDE Files
 .vscode
 .idea
+
+uv.lock

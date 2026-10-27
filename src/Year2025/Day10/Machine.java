@@ -1,6 +1,8 @@
 package Year2025.Day10;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Machine {
     private ArrayList<Boolean> lights;
@@ -28,7 +30,7 @@ public class Machine {
     public boolean checkButtonCombo(String buttonCombo) {
         assert buttonCombo.length() == buttons.size() : "Button Combo: " + buttonCombo + " > " + buttons.size();
         ArrayList<Boolean> checkLights = new ArrayList<>(lights.size());
-        for (boolean l : lights) checkLights.add(false);
+        for (boolean _ : lights) checkLights.add(false);
 
         for (int i = 0; i < buttonCombo.length(); i++) {
             if (buttonCombo.charAt(i) == '1') {
@@ -38,5 +40,14 @@ public class Machine {
             }
         }
         return checkLights.equals(lights);
+    }
+
+    public int makeJoltages() {
+        buttons.sort(Comparator.comparingInt(ArrayList::size));
+        Collections.reverse(buttons);
+
+
+
+        return 0;
     }
 }
